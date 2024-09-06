@@ -1,23 +1,11 @@
 Para manipular imagenes nampy, para ver imagenes imageio, para mostrar las imagenes matplotlib as plt
 
-
-[ ]
-  1
-  2
-  3
 import imageio
 import numpy as np
 import matplotlib.pyplot as plt
+
 Funcion para pasar de RGB a YIQ
 
-
-[ ]
-  1
-  2
-  3
-  4
-  5
-  6
 def RGB2YIQ(img):
 yiq=np.zeros(img.shape)
 yiq[:,:,0] = np.clip(0.299*img[:,:,0] + 0.587*img[:,:,1] + 0.114*img[:,:,2],0,1)
@@ -27,27 +15,6 @@ return yiq
 
 Codigo generado por IA para pasar de RGB a YIQ
 
-
-[ ]
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
- 16
- 17
- 18
- 19
 # prompt: definir funcion para pasar de rgb a yiq
 
 import imageio
@@ -69,23 +36,6 @@ def RGB2YIQ(img):
 
 Codigo para pasar de YIQ a RGB generado por IA
 
-
-[ ]
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
- 13
- 14
- 15
 # prompt: definir funcion
 
 # Funcion para pasar de YIQ a RGB
@@ -103,20 +53,6 @@ def YIQ2RGB(img):
 
 Cargar la imagen
 
-
-[ ]
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
- 10
- 11
- 12
 img=np.clip(imageio.imread('Figura1.png')/255,0,1)
 print(img.shape)
 print(img.dtype)
@@ -132,17 +68,6 @@ plt.imshow(img[:,:,2])
 
 Llamo a la funcion (pasar de RGB a YIQ) para mostrar la imagen (lo de clases) Ver de cada canal YIQ
 
-
-[ ]
-  1
-  2
-  3
-  4
-  5
-  6
-  7
-  8
-  9
 yiq=RGB2YIQ(img)
 plt.figure(0)
 plt.imshow(yiq)
@@ -154,9 +79,4 @@ plt.figure(3)
 plt.imshow(yiq[:,:,2],'gray')
 
 
-[ ]
-1234
-# prompt: crear una ventana y mostrar
-
-plt.show()
 
