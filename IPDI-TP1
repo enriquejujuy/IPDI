@@ -1,0 +1,162 @@
+Para manipular imagenes nampy, para ver imagenes imageio, para mostrar las imagenes matplotlib as plt
+
+
+[ ]
+  1
+  2
+  3
+import imageio
+import numpy as np
+import matplotlib.pyplot as plt
+Funcion para pasar de RGB a YIQ
+
+
+[ ]
+  1
+  2
+  3
+  4
+  5
+  6
+def RGB2YIQ(img):
+yiq=np.zeros(img.shape)
+yiq[:,:,0] = np.clip(0.299*img[:,:,0] + 0.587*img[:,:,1] + 0.114*img[:,:,2],0,1)
+yiq[:,:,1] = np.clip(0.59*img[:,:,0] + -0.27 * img[:,:,1]  +-0.32*img[:,:,2],-0.5957,0.5957)
+yiq[:,:,2] = np.clip(0.21*img[:,:,0] + -0.52 * img[:,:,1]  + 0.31*img[:,:,2],0.-5226,0.5226)
+return yiq
+
+Codigo generado por IA para pasar de RGB a YIQ
+
+
+[ ]
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+ 16
+ 17
+ 18
+ 19
+# prompt: definir funcion para pasar de rgb a yiq
+
+import imageio
+import numpy as np
+import matplotlib.pyplot as plt
+# Para manipular imagenes nampy, para ver imagenes imageio, para mostrar las imagenes matplotlib as plt
+# Funcion para pasar de RGB a YIQ
+def RGB2YIQ(img):
+  """
+
+  Args:
+    img:
+  """
+  yiq=np.zeros(img.shape)
+  yiq[:,:,0] = np.clip(0.299*img[:,:,0] + 0.587*img[:,:,1] + 0.114*img[:,:,2],0,1)
+  yiq[:,:,1] = np.clip(0.59*img[:,:,0] + -0.27 * img[:,:,1]  +-0.32*img[:,:,2],-0.5957,0.5957)
+  yiq[:,:,2] = np.clip(0.21*img[:,:,0] + -0.52 * img[:,:,1]  + 0.31*img[:,:,2],0.-5226,0.5226)
+  return yiq
+
+Codigo para pasar de YIQ a RGB generado por IA
+
+
+[ ]
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+ 13
+ 14
+ 15
+# prompt: definir funcion
+
+# Funcion para pasar de YIQ a RGB
+def YIQ2RGB(img):
+  """
+
+  Args:
+    img:
+  """
+  rgb=np.zeros(img.shape)
+  rgb[:,:,0] = np.clip(img[:,:,0] + 0.9563*img[:,:,1] + 0.621*img[:,:,2],0,1)
+  rgb[:,:,1] = np.clip(img[:,:,0] - 0.2721*img[:,:,1] - 0.6474*img[:,:,2],0,1)
+  rgb[:,:,2] = np.clip(img[:,:,0] - 1.1070*img[:,:,1] + 1.7046*img[:,:,2],0,1)
+  return rgb
+
+Cargar la imagen
+
+
+[ ]
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+ 10
+ 11
+ 12
+img=np.clip(imageio.imread('Figura1.png')/255,0,1)
+print(img.shape)
+print(img.dtype)
+
+plt.figure(0)
+plt.imshow(img)
+plt.figure(1)
+plt.imshow(img[:,:,0])
+plt.figure(2)
+plt.imshow(img[:,:,1])
+plt.figure(3)
+plt.imshow(img[:,:,2])
+
+Llamo a la funcion (pasar de RGB a YIQ) para mostrar la imagen (lo de clases) Ver de cada canal YIQ
+
+
+[ ]
+  1
+  2
+  3
+  4
+  5
+  6
+  7
+  8
+  9
+yiq=RGB2YIQ(img)
+plt.figure(0)
+plt.imshow(yiq)
+plt.figure(1)
+plt.imshow(yiq[:,:,0],'gray')
+plt.figure(2)
+plt.imshow(yiq[:,:,1],'gray')
+plt.figure(3)
+plt.imshow(yiq[:,:,2],'gray')
+
+
+[ ]
+1234
+# prompt: crear una ventana y mostrar
+
+plt.show()
+
